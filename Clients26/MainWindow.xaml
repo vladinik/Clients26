@@ -8,20 +8,20 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="DataGriClients" HorizontalAlignment="Left" Height="240" Margin="10,106,0,0" VerticalAlignment="Top" Width="378"/>
-        <Button x:Name="ButtonAdd" Content="Add" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAdd_Click" FontSize="14" Height="24"/>
-        <Button x:Name="ButtonEdit" Content="Edit" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" Width="75" Click="ButtonEdit_Click" FontSize="14" Height="24"/>
-        <Button x:Name="ButtonDelete" Content="Delete" HorizontalAlignment="Left" Margin="105,383,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDelete_Click" FontSize="14" Height="24"/>
+        <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAdd_Click" FontSize="14" Height="24"/>
+        <Button x:Name="ButtonEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="90,351,0,0" VerticalAlignment="Top" Width="99" Click="ButtonEdit_Click" FontSize="14" Height="24"/>
+        <Button x:Name="ButtonDelete" Content="Удалить" HorizontalAlignment="Left" Margin="194,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDelete_Click" FontSize="14" Height="24"/>
         <Label x:Name="LableTitle" Content="Список" HorizontalAlignment="Left" Margin="347,20,0,0" VerticalAlignment="Top" Height="48" Width="90" FontSize="20"/>
         <DataGrid x:Name="DataGridAgents" HorizontalAlignment="Left" Height="240" Margin="393,106,0,0" VerticalAlignment="Top" Width="391"/>
         <Label Content="Клиенты" HorizontalAlignment="Left" Margin="124,75,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
         <Label Content="Агенты" HorizontalAlignment="Left" Margin="538,75,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
-        <Button x:Name="ButtonAddAgents" Content="Add" HorizontalAlignment="Left" Margin="709,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAddAgents_Click" FontSize="14" Height="24" />
-        <Button x:Name="ButtonEditAgents" Content="Edit" HorizontalAlignment="Left" Margin="709,383,0,0" VerticalAlignment="Top" Width="75" Click="ButtonEditAgents_Click" FontSize="14" Height="24" />
-        <Button x:Name="ButtonDeleteAgents" Content="Delete" HorizontalAlignment="Left" Margin="614,383,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDeleteAgents_Click" FontSize="14" Height="24" />
+        <Button x:Name="ButtonAddAgents" Content="Добавить" HorizontalAlignment="Left" Margin="518,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAddAgents_Click" FontSize="14" Height="24" />
+        <Button x:Name="ButtonEditAgents" Content="Редактировать" HorizontalAlignment="Left" Margin="598,351,0,0" VerticalAlignment="Top" Width="104" Click="ButtonEditAgents_Click" FontSize="14" Height="24" />
+        <Button x:Name="ButtonDeleteAgents" Content="Удалить" HorizontalAlignment="Left" Margin="707,351,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDeleteAgents_Click" FontSize="14" Height="24" />
         <Image Margin="15,0,543.2,341" Source="logo.png" Stretch="Fill"/>
-        <Button x:Name="ButtonObject" Content="Object" HorizontalAlignment="Left" Margin="347,383,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Height="24" Click="ButtonObject_Click"/>
-        <Button x:Name="ButtonOffer" Content="Demain" HorizontalAlignment="Left" Margin="347,351,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Height="24" Click="ButtonOffer_Click" />
-        <Button x:Name="ButtonSupply" Content="Supply" HorizontalAlignment="Left" Margin="427,383,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Height="24" Click="ButtonSupply_Click" />
+        <Button x:Name="ButtonObject" Content="Недвижимость" HorizontalAlignment="Left" Margin="333,380,0,0" VerticalAlignment="Top" Width="104" FontSize="14" Height="24" Click="ButtonObject_Click"/>
+        <Button x:Name="ButtonOffer" Content="Потребность " HorizontalAlignment="Left" Margin="237,380,0,0" VerticalAlignment="Top" Width="91" FontSize="14" Height="24" Click="ButtonOffer_Click" />
+        <Button x:Name="ButtonSupply" Content="Предложение" HorizontalAlignment="Left" Margin="442,380,0,0" VerticalAlignment="Top" Width="94" FontSize="14" Height="24" Click="ButtonSupply_Click" />
 
     </Grid>
 </Window>
