@@ -1,0 +1,41 @@
+﻿<Window x:Class="Clients26.WinObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clients26"
+        mc:Ignorable="d"
+        Title="WinObject" Height="751.804" Width="877.871">
+    <Grid Margin="0,0,3.4,2.4">
+        <Label x:Name="LableTitle" Content="Недвижимость" HorizontalAlignment="Left" Margin="373,16,0,0" VerticalAlignment="Top" Height="48" Width="388" FontSize="20"/>
+        <DataGrid x:Name="DataGridObject" HorizontalAlignment="Left" Height="348" Margin="0,248,0,0" VerticalAlignment="Top" Width="873"/>
+        <GroupBox x:Name="GroupBoxSearch"  Header="Поиск" HorizontalAlignment="Left" Height="137" Margin="10,84,0,0" VerticalAlignment="Top" Width="398" FontSize="14">
+            <StackPanel HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="373">
+                <Label Content="Адрес" Margin="10,8,181.2,0" FontSize="14" Height="34"/>
+                <TextBox x:Name="TextBoxSteet" Height="36" TextWrapping="Wrap" Text="" Margin="16,10,125.8,0" RenderTransformOrigin="-0.255,5.135" />
+            </StackPanel>
+        </GroupBox>
+        <Label Content="Фильтр" HorizontalAlignment="Left" Margin="440,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+        <ComboBox x:Name="ComboBoxFiltr" HorizontalAlignment="Left" Margin="443,122,0,0" VerticalAlignment="Top" Width="120"  Height="48" SelectionChanged="ComboBoxFiltr_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FFE7FABF" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="все"/>
+            <ComboBoxItem Content="квартира"/>
+            <ComboBoxItem Content="дом"/>
+            <ComboBoxItem Content="земельный участок"/>
+        </ComboBox>
+        <Button x:Name="ButtonNewApartments" Content="NewApart-s" HorizontalAlignment="Left" Margin="52,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+        <Button x:Name="ButtonDelete" Content="Delete" HorizontalAlignment="Left" Margin="749,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" RenderTransformOrigin="0.672,-1.902" Height="24" Click="ButtonDelete_Click"/>
+        <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="749,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+        <Button x:Name="ButtonNewHouses" Content="NewHouses" HorizontalAlignment="Left" Margin="171,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
+        <Button x:Name="ButtonNewLands" Content="NewLands" HorizontalAlignment="Left" Margin="292,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
+        <Button x:Name="ButtonApartments" Content="Apart-s" HorizontalAlignment="Left" Margin="52,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonApartments_Click" />
+        <Button x:Name="ButtonHouses" Content="Houses" HorizontalAlignment="Left" Margin="171,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonHouses_Click" />
+        <Button x:Name="ButtonLands" Content="Lands" HorizontalAlignment="Left" Margin="292,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonLands_Click" />
+        <Image x:Name="ImageEsoft"  Margin="15,0,618.2,639" Source="logo.png" Stretch="Fill"/>
+    </Grid>
+</Window>

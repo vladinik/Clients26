@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Clients.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="DealShare" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="ApartmentOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MinArea" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MinRooms" Type="int" />
+          <Property Name="MaxRooms" Type="int" />
+          <Property Name="MinFloor" Type="int" />
+          <Property Name="MaxFloor" Type="int" />
+        </EntityType>
+        <EntityType Name="Apartments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Floor" Type="int" />
+          <Property Name="Rooms" Type="int" />
+          <Property Name="TotalArea" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Districts">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Area" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HouseOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MinFloors" Type="int" />
+          <Property Name="MaxFloors" Type="int" />
+          <Property Name="MinArea" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MinRooms" Type="int" />
+          <Property Name="MaxRooms" Type="int" />
+        </EntityType>
+        <EntityType Name="Houses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TotalFloors" Type="int" />
+          <Property Name="Rooms" Type="int" />
+          <Property Name="TotalArea" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LandOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MinArea" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Lands">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TotalArea" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="IdAgent" Type="int" Nullable="false" />
+          <Property Name="IdRealObject" Type="int" Nullable="false" />
+          <Property Name="MinPrice" Type="int" />
+          <Property Name="MaxPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RealEstateObjects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AddressCity" Type="nvarchar" MaxLength="10" />
+          <Property Name="AddressStreet" Type="nvarchar" MaxLength="30" />
+          <Property Name="AddressHouse" Type="nvarchar" MaxLength="5" />
+          <Property Name="AddressNumber" Type="nvarchar" MaxLength="5" />
+          <Property Name="CoordinateLatitude" Type="float" />
+          <Property Name="CoordinateLongitude" Type="float" />
+        </EntityType>
+        <EntityType Name="Supplies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="AgentId" Type="int" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="RealEstateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeObject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Agents_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApartmentOffer_Offer">
+          <End Role="Offer" Type="Self.Offer" Multiplicity="1" />
+          <End Role="ApartmentOffer" Type="Self.ApartmentOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApartmentOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Apartments_RealEstateObjects">
+          <End Role="RealEstateObjects" Type="Self.RealEstateObjects" Multiplicity="1" />
+          <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Apartments">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HouseOffer_Offer">
+          <End Role="Offer" Type="Self.Offer" Multiplicity="1" />
+          <End Role="HouseOffer" Type="Self.HouseOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HouseOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Houses_RealEstateObjects">
+          <End Role="RealEstateObjects" Type="Self.RealEstateObjects" Multiplicity="1" />
+          <End Role="Houses" Type="Self.Houses" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Houses">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LandOffer_Offer">
+          <End Role="Offer" Type="Self.Offer" Multiplicity="1" />
+          <End Role="LandOffer" Type="Self.LandOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LandOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lands_RealEstateObjects">
+          <End Role="RealEstateObjects" Type="Self.RealEstateObjects" Multiplicity="1" />
+          <End Role="Lands" Type="Self.Lands" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Lands">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Agents">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_TypeObject">
+          <End Role="TypeObject" Type="Self.TypeObject" Multiplicity="1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeObject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdRealObject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplies_Agents">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="AgentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplies_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplies_RealEstateObjects">
+          <End Role="RealEstateObjects" Type="Self.RealEstateObjects" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="RealEstateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClientsStoreContainer">
+          <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApartmentOffer" EntityType="Self.ApartmentOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Apartments" EntityType="Self.Apartments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Districts" EntityType="Self.Districts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HouseOffer" EntityType="Self.HouseOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Houses" EntityType="Self.Houses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LandOffer" EntityType="Self.LandOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lands" EntityType="Self.Lands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offer" EntityType="Self.Offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealEstateObjects" EntityType="Self.RealEstateObjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplies" EntityType="Self.Supplies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeObject" EntityType="Self.TypeObject" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Agents_Person" Association="Self.FK_Agents_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApartmentOffer_Offer" Association="Self.FK_ApartmentOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="ApartmentOffer" EntitySet="ApartmentOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Apartments_RealEstateObjects" Association="Self.FK_Apartments_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Apartments" EntitySet="Apartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Person" Association="Self.FK_Client_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseOffer_Offer" Association="Self.FK_HouseOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="HouseOffer" EntitySet="HouseOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Houses_RealEstateObjects" Association="Self.FK_Houses_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Houses" EntitySet="Houses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LandOffer_Offer" Association="Self.FK_LandOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="LandOffer" EntitySet="LandOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lands_RealEstateObjects" Association="Self.FK_Lands_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Lands" EntitySet="Lands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Agents" Association="Self.FK_Offer_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Client" Association="Self.FK_Offer_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_TypeObject" Association="Self.FK_Offer_TypeObject">
+            <End Role="TypeObject" EntitySet="TypeObject" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplies_Agents" Association="Self.FK_Supplies_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplies_Client" Association="Self.FK_Supplies_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplies_RealEstateObjects" Association="Self.FK_Supplies_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Clients" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ClientsContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agents" EntityType="Clients.Agents" />
+          <EntitySet Name="ApartmentOffer" EntityType="Clients.ApartmentOffer" />
+          <EntitySet Name="Apartments" EntityType="Clients.Apartments" />
+          <EntitySet Name="Client" EntityType="Clients.Client" />
+          <EntitySet Name="Districts" EntityType="Clients.Districts" />
+          <EntitySet Name="HouseOffer" EntityType="Clients.HouseOffer" />
+          <EntitySet Name="Houses" EntityType="Clients.Houses" />
+          <EntitySet Name="LandOffer" EntityType="Clients.LandOffer" />
+          <EntitySet Name="Lands" EntityType="Clients.Lands" />
+          <EntitySet Name="Offer" EntityType="Clients.Offer" />
+          <EntitySet Name="Person" EntityType="Clients.Person" />
+          <EntitySet Name="RealEstateObjects" EntityType="Clients.RealEstateObjects" />
+          <EntitySet Name="TypeObject" EntityType="Clients.TypeObject" />
+          <AssociationSet Name="FK_Agents_Person" Association="Clients.FK_Agents_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Agents" Association="Clients.FK_Offer_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApartmentOffer_Offer" Association="Clients.FK_ApartmentOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="ApartmentOffer" EntitySet="ApartmentOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Apartments_RealEstateObjects" Association="Clients.FK_Apartments_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Apartments" EntitySet="Apartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Person" Association="Clients.FK_Client_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Client" Association="Clients.FK_Offer_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseOffer_Offer" Association="Clients.FK_HouseOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="HouseOffer" EntitySet="HouseOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Houses_RealEstateObjects" Association="Clients.FK_Houses_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Houses" EntitySet="Houses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LandOffer_Offer" Association="Clients.FK_LandOffer_Offer">
+            <End Role="Offer" EntitySet="Offer" />
+            <End Role="LandOffer" EntitySet="LandOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lands_RealEstateObjects" Association="Clients.FK_Lands_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Lands" EntitySet="Lands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_TypeObject" Association="Clients.FK_Offer_TypeObject">
+            <End Role="TypeObject" EntitySet="TypeObject" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <EntitySet Name="Supplies" EntityType="Clients.Supplies" />
+          <AssociationSet Name="FK_Supplies_Agents" Association="Clients.FK_Supplies_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplies_Client" Association="Clients.FK_Supplies_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplies_RealEstateObjects" Association="Clients.FK_Supplies_RealEstateObjects">
+            <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="DealShare" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Person" Relationship="Clients.FK_Agents_Person" FromRole="Agents" ToRole="Person" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_Offer_Agents" FromRole="Agents" ToRole="Offer" />
+          <NavigationProperty Name="Supplies" Relationship="Clients.FK_Supplies_Agents" FromRole="Agents" ToRole="Supplies" />
+        </EntityType>
+        <EntityType Name="ApartmentOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MinArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinRooms" Type="Int32" />
+          <Property Name="MaxRooms" Type="Int32" />
+          <Property Name="MinFloor" Type="Int32" />
+          <Property Name="MaxFloor" Type="Int32" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_ApartmentOffer_Offer" FromRole="ApartmentOffer" ToRole="Offer" />
+        </EntityType>
+        <EntityType Name="Apartments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Floor" Type="Int32" />
+          <Property Name="Rooms" Type="Int32" />
+          <Property Name="TotalArea" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="RealEstateObjects" Relationship="Clients.FK_Apartments_RealEstateObjects" FromRole="Apartments" ToRole="RealEstateObjects" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Person" Relationship="Clients.FK_Client_Person" FromRole="Client" ToRole="Person" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_Offer_Client" FromRole="Client" ToRole="Offer" />
+          <NavigationProperty Name="Supplies" Relationship="Clients.FK_Supplies_Client" FromRole="Client" ToRole="Supplies" />
+        </EntityType>
+        <EntityType Name="Districts">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HouseOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MinFloors" Type="Int32" />
+          <Property Name="MaxFloors" Type="Int32" />
+          <Property Name="MinArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinRooms" Type="Int32" />
+          <Property Name="MaxRooms" Type="Int32" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_HouseOffer_Offer" FromRole="HouseOffer" ToRole="Offer" />
+        </EntityType>
+        <EntityType Name="Houses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TotalFloors" Type="Int32" />
+          <Property Name="Rooms" Type="Int32" />
+          <Property Name="TotalArea" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="RealEstateObjects" Relationship="Clients.FK_Houses_RealEstateObjects" FromRole="Houses" ToRole="RealEstateObjects" />
+        </EntityType>
+        <EntityType Name="LandOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MinArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxArea" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_LandOffer_Offer" FromRole="LandOffer" ToRole="Offer" />
+        </EntityType>
+        <EntityType Name="Lands">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TotalArea" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="RealEstateObjects" Relationship="Clients.FK_Lands_RealEstateObjects" FromRole="Lands" ToRole="RealEstateObjects" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="IdAgent" Type="Int32" Nullable="false" />
+          <Property Name="IdRealObject" Type="Int32" Nullable="false" />
+          <Property Name="MinPrice" Type="Int32" />
+          <Property Name="MaxPrice" Type="Int32" />
+          <NavigationProperty Name="Agents" Relationship="Clients.FK_Offer_Agents" FromRole="Offer" ToRole="Agents" />
+          <NavigationProperty Name="ApartmentOffer" Relationship="Clients.FK_ApartmentOffer_Offer" FromRole="Offer" ToRole="ApartmentOffer" />
+          <NavigationProperty Name="Client" Relationship="Clients.FK_Offer_Client" FromRole="Offer" ToRole="Client" />
+          <NavigationProperty Name="HouseOffer" Relationship="Clients.FK_HouseOffer_Offer" FromRole="Offer" ToRole="HouseOffer" />
+          <NavigationProperty Name="LandOffer" Relationship="Clients.FK_LandOffer_Offer" FromRole="Offer" ToRole="LandOffer" />
+          <NavigationProperty Name="TypeObject" Relationship="Clients.FK_Offer_TypeObject" FromRole="Offer" ToRole="TypeObject" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agents" Relationship="Clients.FK_Agents_Person" FromRole="Person" ToRole="Agents" />
+          <NavigationProperty Name="Client" Relationship="Clients.FK_Client_Person" FromRole="Person" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="RealEstateObjects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AddressCity" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AddressStreet" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AddressHouse" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="AddressNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CoordinateLatitude" Type="Double" />
+          <Property Name="CoordinateLongitude" Type="Double" />
+          <NavigationProperty Name="Apartments" Relationship="Clients.FK_Apartments_RealEstateObjects" FromRole="RealEstateObjects" ToRole="Apartments" />
+          <NavigationProperty Name="Houses" Relationship="Clients.FK_Houses_RealEstateObjects" FromRole="RealEstateObjects" ToRole="Houses" />
+          <NavigationProperty Name="Lands" Relationship="Clients.FK_Lands_RealEstateObjects" FromRole="RealEstateObjects" ToRole="Lands" />
+          <NavigationProperty Name="Supplies" Relationship="Clients.FK_Supplies_RealEstateObjects" FromRole="RealEstateObjects" ToRole="Supplies" />
+        </EntityType>
+        <EntityType Name="TypeObject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Offer" Relationship="Clients.FK_Offer_TypeObject" FromRole="TypeObject" ToRole="Offer" />
+        </EntityType>
+        <Association Name="FK_Agents_Person">
+          <End Type="Clients.Person" Role="Person" Multiplicity="1" />
+          <End Type="Clients.Agents" Role="Agents" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Agents">
+          <End Type="Clients.Agents" Role="Agents" Multiplicity="1" />
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApartmentOffer_Offer">
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="1" />
+          <End Type="Clients.ApartmentOffer" Role="ApartmentOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApartmentOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Apartments_RealEstateObjects">
+          <End Type="Clients.RealEstateObjects" Role="RealEstateObjects" Multiplicity="1" />
+          <End Type="Clients.Apartments" Role="Apartments" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Apartments">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Person">
+          <End Type="Clients.Person" Role="Person" Multiplicity="1" />
+          <End Type="Clients.Client" Role="Client" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Client">
+          <End Type="Clients.Client" Role="Client" Multiplicity="1" />
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HouseOffer_Offer">
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="1" />
+          <End Type="Clients.HouseOffer" Role="HouseOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HouseOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Houses_RealEstateObjects">
+          <End Type="Clients.RealEstateObjects" Role="RealEstateObjects" Multiplicity="1" />
+          <End Type="Clients.Houses" Role="Houses" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Houses">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LandOffer_Offer">
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="1" />
+          <End Type="Clients.LandOffer" Role="LandOffer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Offer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LandOffer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lands_RealEstateObjects">
+          <End Type="Clients.RealEstateObjects" Role="RealEstateObjects" Multiplicity="1" />
+          <End Type="Clients.Lands" Role="Lands" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Lands">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_TypeObject">
+          <End Type="Clients.TypeObject" Role="TypeObject" Multiplicity="1" />
+          <End Type="Clients.Offer" Role="Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeObject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="IdRealObject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="AgentId" Type="Int32" Nullable="false" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="RealEstateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agents" Relationship="Clients.FK_Supplies_Agents" FromRole="Supplies" ToRole="Agents" />
+          <NavigationProperty Name="Client" Relationship="Clients.FK_Supplies_Client" FromRole="Supplies" ToRole="Client" />
+          <NavigationProperty Name="RealEstateObjects" Relationship="Clients.FK_Supplies_RealEstateObjects" FromRole="Supplies" ToRole="RealEstateObjects" />
+        </EntityType>
+        <Association Name="FK_Supplies_Agents">
+          <End Type="Clients.Agents" Role="Agents" Multiplicity="1" />
+          <End Type="Clients.Supplies" Role="Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="AgentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplies_Client">
+          <End Type="Clients.Client" Role="Client" Multiplicity="1" />
+          <End Type="Clients.Supplies" Role="Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplies_RealEstateObjects">
+          <End Type="Clients.RealEstateObjects" Role="RealEstateObjects" Multiplicity="1" />
+          <End Type="Clients.Supplies" Role="Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealEstateObjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="RealEstateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Clients" />
+        <Alias Key="Target" Value="Clients.Store" />
+        <EntityContainerMapping CdmEntityContainer="ClientsContainer" StorageEntityContainer="ClientsStoreContainer">
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="Clients.Agents">
+              <MappingFragment StoreEntitySet="Agents">
+                <ScalarProperty Name="DealShare" ColumnName="DealShare" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApartmentOffer">
+            <EntityTypeMapping TypeName="Clients.ApartmentOffer">
+              <MappingFragment StoreEntitySet="ApartmentOffer">
+                <ScalarProperty Name="MaxFloor" ColumnName="MaxFloor" />
+                <ScalarProperty Name="MinFloor" ColumnName="MinFloor" />
+                <ScalarProperty Name="MaxRooms" ColumnName="MaxRooms" />
+                <ScalarProperty Name="MinRooms" ColumnName="MinRooms" />
+                <ScalarProperty Name="MaxArea" ColumnName="MaxArea" />
+                <ScalarProperty Name="MinArea" ColumnName="MinArea" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apartments">
+            <EntityTypeMapping TypeName="Clients.Apartments">
+              <MappingFragment StoreEntitySet="Apartments">
+                <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+                <ScalarProperty Name="Rooms" ColumnName="Rooms" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="Clients.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="Clients.Districts">
+              <MappingFragment StoreEntitySet="Districts">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HouseOffer">
+            <EntityTypeMapping TypeName="Clients.HouseOffer">
+              <MappingFragment StoreEntitySet="HouseOffer">
+                <ScalarProperty Name="MaxRooms" ColumnName="MaxRooms" />
+                <ScalarProperty Name="MinRooms" ColumnName="MinRooms" />
+                <ScalarProperty Name="MaxArea" ColumnName="MaxArea" />
+                <ScalarProperty Name="MinArea" ColumnName="MinArea" />
+                <ScalarProperty Name="MaxFloors" ColumnName="MaxFloors" />
+                <ScalarProperty Name="MinFloors" ColumnName="MinFloors" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Houses">
+            <EntityTypeMapping TypeName="Clients.Houses">
+              <MappingFragment StoreEntitySet="Houses">
+                <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+                <ScalarProperty Name="Rooms" ColumnName="Rooms" />
+                <ScalarProperty Name="TotalFloors" ColumnName="TotalFloors" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LandOffer">
+            <EntityTypeMapping TypeName="Clients.LandOffer">
+              <MappingFragment StoreEntitySet="LandOffer">
+                <ScalarProperty Name="MaxArea" ColumnName="MaxArea" />
+                <ScalarProperty Name="MinArea" ColumnName="MinArea" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lands">
+            <EntityTypeMapping TypeName="Clients.Lands">
+              <MappingFragment StoreEntitySet="Lands">
+                <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offer">
+            <EntityTypeMapping TypeName="Clients.Offer">
+              <MappingFragment StoreEntitySet="Offer">
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="IdRealObject" ColumnName="IdRealObject" />
+                <ScalarProperty Name="IdAgent" ColumnName="IdAgent" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="Clients.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealEstateObjects">
+            <EntityTypeMapping TypeName="Clients.RealEstateObjects">
+              <MappingFragment StoreEntitySet="RealEstateObjects">
+                <ScalarProperty Name="CoordinateLongitude" ColumnName="CoordinateLongitude" />
+                <ScalarProperty Name="CoordinateLatitude" ColumnName="CoordinateLatitude" />
+                <ScalarProperty Name="AddressNumber" ColumnName="AddressNumber" />
+                <ScalarProperty Name="AddressHouse" ColumnName="AddressHouse" />
+                <ScalarProperty Name="AddressStreet" ColumnName="AddressStreet" />
+                <ScalarProperty Name="AddressCity" ColumnName="AddressCity" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeObject">
+            <EntityTypeMapping TypeName="Clients.TypeObject">
+              <MappingFragment StoreEntitySet="TypeObject">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplies">
+            <EntityTypeMapping TypeName="Clients.Supplies">
+              <MappingFragment StoreEntitySet="Supplies">
+                <ScalarProperty Name="RealEstateId" ColumnName="RealEstateId" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

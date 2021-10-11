@@ -1,0 +1,50 @@
+﻿<Window x:Class="Clients26.NewObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clients26"
+        mc:Ignorable="d"
+        Title="NewObject" Height="635.891" Width="878.217">
+    <Grid Margin="0,0,-0.4,38">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="-5,2,5.4,-40" Grid.RowSpan="2">
+            <Label x:Name="LableTitle" Content=" " HorizontalAlignment="Left" Margin="284,19,0,0" VerticalAlignment="Top" Height="48" Width="388" FontSize="20"/>
+            <TextBox x:Name="TextBoxId" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxCity" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxStreet" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxHouses" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxNumber" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <Label x:Name="LableId" x:FieldModifier="public" Content="id" HorizontalAlignment="Left" Margin="42,130,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Город" HorizontalAlignment="Left" Margin="42,189,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Улица" HorizontalAlignment="Left" Margin="42,258,0,0" VerticalAlignment="Top" FontSize="14" Height="46"/>
+            <Label Content="Дом" HorizontalAlignment="Left" Margin="40,321,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Координатная Широта" HorizontalAlignment="Left" Margin="450,130,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Координатная Долгота" HorizontalAlignment="Left" Margin="450,189,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <TextBox x:Name="TextBoxCoordinateLatitude" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="674,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxCoordinateLongitude" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="674,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <Label Content="Квартира" HorizontalAlignment="Left" Margin="42,392,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Общая площадь" HorizontalAlignment="Left" Margin="42,456,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <TextBox x:Name="TextBoxTotalArea" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="167,456,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <Label Content="Этаж" HorizontalAlignment="Left" Margin="450,258,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Label Content="Этажей в доме" HorizontalAlignment="Left" Margin="450,321,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <TextBox x:Name="TextBoxFloors" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="674,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxTotalFloors" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="674,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <TextBox x:Name="TextBoxRooms" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="674,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
+            <Label Content="Количество комнат" HorizontalAlignment="Left" Margin="450,392,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
+            <Button x:Name="ButtonNewApartments" Content="NewApart-s" HorizontalAlignment="Left" Margin="488,480,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+            <Button x:Name="ButtonNewHouses" Content="NewHouses" HorizontalAlignment="Left" Margin="607,480,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
+            <Button x:Name="ButtonNewLands" Content="NewLands" HorizontalAlignment="Left" Margin="726,480,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
+            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="781,572,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+            <Button x:Name="ButtonSApartments" Content="sApart-s" HorizontalAlignment="Left" Margin="488,525,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSApartments_Click"/>
+            <Button x:Name="ButtonSHouses" Content="sHouses" HorizontalAlignment="Left" Margin="607,525,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSHouses_Click"  />
+            <Button x:Name="ButtonSLands" Content="sLands" HorizontalAlignment="Left" Margin="726,525,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSLands_Click"  />
+
+        </Grid>
+        <Image Margin="15,0,622.4,487" Source="logo.png" Stretch="Fill"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,69 @@
+﻿<Window x:Class="Clients26.NewSupply"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clients26"
+        mc:Ignorable="d"
+        Title="NewSupply" Height="500.071" Width="940.22">
+    <Grid>
+        <Grid Margin="0,0,5.2,0.4">
+            <Label x:Name="LableTitle" Content="" HorizontalAlignment="Left" Margin="325,16,0,0" VerticalAlignment="Top" Height="48" Width="525" FontSize="20"/>
+            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="718,396,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+           
+            <Label Content="Id" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Клиент" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Агент" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Объект недвижимости" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="173" FontSize="14"/>
+            <Label Content="Цена" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <ComboBox x:Name="ComboBoxClient" IsEditable="True" HorizontalAlignment="Left" Margin="171,166,0,0" VerticalAlignment="Top" Width="209"  Height="48" >
+                <ComboBoxItem Content="2" FontSize="14"/>
+                <ComboBoxItem Content="3" FontSize="14"/>
+                <ComboBoxItem Content="5" FontSize="14"/>
+                <ComboBoxItem Content="6" FontSize="14"/>
+                <ComboBoxItem Content="8" FontSize="14"/>
+                <ComboBoxItem Content="10" FontSize="14"/>
+                <ComboBoxItem Content="12" FontSize="14"/>
+                <ComboBoxItem Content="14" FontSize="14"/>
+                <ComboBoxItem Content="16" FontSize="14"/>
+                <ComboBoxItem Content="17" FontSize="14"/>
+                <ComboBoxItem Content="18" FontSize="14"/>
+                <ComboBoxItem Content="20" FontSize="14"/>
+                <ComboBoxItem Content="21" FontSize="14"/>
+                <ComboBoxItem Content="22" FontSize="14"/>
+                <ComboBoxItem Content="23" FontSize="14"/>
+                <ComboBoxItem Content="25" FontSize="14"/>
+                <ComboBoxItem Content="26" FontSize="14"/>
+                <ComboBoxItem Content="27" FontSize="14"/>
+                <ComboBoxItem Content="28" FontSize="14"/>
+                <ComboBoxItem Content="29" FontSize="14"/>
+                <ComboBoxItem Content="30" FontSize="14"/>
+                <ComboBoxItem Content="31" FontSize="14"/>
+                <ComboBoxItem Content="32" FontSize="14"/>
+                <ComboBoxItem Content="33" FontSize="14"/>
+                <ComboBoxItem Content="35" FontSize="14"/>
+                <ComboBoxItem Content="36" FontSize="14"/>
+            </ComboBox>
+            <ComboBox x:Name="ComboBoxAgent" IsEditable="True" HorizontalAlignment="Left" Margin="171,228,0,0" VerticalAlignment="Top" Width="209"  Height="48">
+                <ComboBoxItem Content="1" FontSize="14"/>
+                <ComboBoxItem Content="4" FontSize="14"/>
+                <ComboBoxItem Content="7" FontSize="14"/>
+                <ComboBoxItem Content="9" FontSize="14"/>
+                <ComboBoxItem Content="11" FontSize="14"/>
+                <ComboBoxItem Content="13" FontSize="14"/>
+                <ComboBoxItem Content="15" FontSize="14"/>
+                <ComboBoxItem Content="19" FontSize="14"/>
+                <ComboBoxItem Content="24" FontSize="14"/>
+                <ComboBoxItem Content="34" FontSize="14"/>
+                <ComboBoxItem Content="37" FontSize="14"/>
+                <ComboBoxItem Content="38" FontSize="14"/>
+            </ComboBox>
+            <TextBox x:Name="TextBoxId" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxId_PreviewTextInput"/>
+            <Button x:Name="ButtonNewSave" Content="NewSave" HorizontalAlignment="Left" Margin="718,283,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+            <Button x:Name="ButtonSave" Content="Save" HorizontalAlignment="Left" Margin="718,341,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSave_Click" />
+            <TextBox x:Name="TextBoxPrice" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,359,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxPrice_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxObject" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxObject_PreviewTextInput"/>
+            <Image x:Name="ImageEsoft_Copy"  Margin="10,10,643.2,371.6" Source="logo.png" Stretch="Fill"/>
+        </Grid>
+    </Grid>
+</Window>

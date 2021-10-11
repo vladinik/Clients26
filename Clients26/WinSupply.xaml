@@ -1,0 +1,23 @@
+﻿<Window x:Class="Clients26.WinSupply"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clients26"
+        mc:Ignorable="d"
+        Title="WinSupply" Height="653.049" Width="915.864">
+    <Grid>
+        <Grid Margin="0,0,-0.4,0.2">
+            <Label x:Name="LableTitle" Content="Предложения" HorizontalAlignment="Left" Margin="350,16,0,0" VerticalAlignment="Top" Height="48" Width="356" FontSize="20"/>
+            <DataGrid x:Name="DataGridSupply" HorizontalAlignment="Left" Height="348" Margin="-2,124,0,0" VerticalAlignment="Top" Width="444" />
+            <Button x:Name="ButtonNew" Content="New" HorizontalAlignment="Left" Margin="38,519,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNew_Click" />
+            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="781,565,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+            <Button x:Name="ButtonEdit" Content="Edit" HorizontalAlignment="Left" Margin="38,565,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonEdit_Click"  />
+            <Image x:Name="ImageEsoft"  Margin="-446,16,1081,623" Source="logo.png" Stretch="Fill"/>
+            <Image x:Name="ImageEsoft_Copy"  Margin="10,10,624.4,524.8" Source="logo.png" Stretch="Fill"/>
+           
+            <Button x:Name="ButtonDelete" Content="Delete" HorizontalAlignment="Left" Margin="781,519,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
