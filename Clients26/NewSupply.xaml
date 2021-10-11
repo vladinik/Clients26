@@ -9,7 +9,7 @@
     <Grid>
         <Grid Margin="0,0,5.2,0.4">
             <Label x:Name="LableTitle" Content="" HorizontalAlignment="Left" Margin="325,16,0,0" VerticalAlignment="Top" Height="48" Width="525" FontSize="20"/>
-            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="718,396,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+            <Button x:Name="ButtonExit" Content="Назад" HorizontalAlignment="Left" Margin="718,396,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
            
             <Label Content="Id" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
             <Label Content="Клиент" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
@@ -59,8 +59,8 @@
                 <ComboBoxItem Content="38" FontSize="14"/>
             </ComboBox>
             <TextBox x:Name="TextBoxId" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxId_PreviewTextInput"/>
-            <Button x:Name="ButtonNewSave" Content="NewSave" HorizontalAlignment="Left" Margin="718,283,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
-            <Button x:Name="ButtonSave" Content="Save" HorizontalAlignment="Left" Margin="718,341,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSave_Click" />
+            <Button x:Name="ButtonNewSave" Content="Новое сохранение" HorizontalAlignment="Left" Margin="718,283,0,0" VerticalAlignment="Top" Width="132" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+            <Button x:Name="ButtonSave" Content="Сохранение" HorizontalAlignment="Left" Margin="718,341,0,0" VerticalAlignment="Top" Width="132" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSave_Click" />
             <TextBox x:Name="TextBoxPrice" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,359,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxPrice_PreviewTextInput"/>
             <TextBox x:Name="TextBoxObject" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxObject_PreviewTextInput"/>
             <Image x:Name="ImageEsoft_Copy"  Margin="10,10,643.2,371.6" Source="logo.png" Stretch="Fill"/>

@@ -9,20 +9,20 @@
     <Grid>
         <Grid Margin="0,0,5.2,0.4">
             <Label x:Name="LableTitle" Content="" HorizontalAlignment="Left" Margin="325,16,0,0" VerticalAlignment="Top" Height="48" Width="525" FontSize="20"/>
-            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="806,680,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+            <Button x:Name="ButtonExit" Content="Назад" HorizontalAlignment="Left" Margin="806,680,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
             <Image x:Name="ImageEsoft"  Margin="10,10,623,629" Source="logo.png" Stretch="Fill"/>
             <Label Content="Id" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
             <Label Content="Клиент" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
             <Label Content="Агент" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
             <Label Content="Объект недвижимости" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="173" FontSize="14"/>
-            <Label Content="Цена Min" HorizontalAlignment="Left" Margin="418,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Цена Max" HorizontalAlignment="Left" Margin="418,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Площадь Min" HorizontalAlignment="Left" Margin="418,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Площадь Max" HorizontalAlignment="Left" Margin="418,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Этаж Min" HorizontalAlignment="Left" Margin="418,322,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Этаж Max" HorizontalAlignment="Left" Margin="418,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
-            <Label Content="Этажей в доме Min" HorizontalAlignment="Left" Margin="418,418,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="145" FontSize="14"/>
-            <Label Content="Этажей в доме Max" HorizontalAlignment="Left" Margin="418,468,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
+            <Label Content="Цена Min" HorizontalAlignment="Left" Margin="10,508,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Цена Max" HorizontalAlignment="Left" Margin="10,558,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Площадь Min" HorizontalAlignment="Left" Margin="10,592,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Площадь Max" HorizontalAlignment="Left" Margin="10,640,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Этаж Min" HorizontalAlignment="Left" Margin="418,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Этаж Max" HorizontalAlignment="Left" Margin="418,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
+            <Label Content="Этажей в доме Min" HorizontalAlignment="Left" Margin="419,194,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="145" FontSize="14"/>
+            <Label Content="Этажей в доме Max" HorizontalAlignment="Left" Margin="423,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
             <ComboBox x:Name="ComboBoxClient" IsEditable="True" HorizontalAlignment="Left" Margin="171,166,0,0" VerticalAlignment="Top" Width="209"  Height="48" >
                 <ComboBoxItem Content="2" FontSize="14"/>
                 <ComboBoxItem Content="3" FontSize="14"/>
@@ -76,18 +76,18 @@
                 <ComboBoxItem Content="2"/>
                 <ComboBoxItem Content="3"/>
             </ComboBox>
-            <TextBox x:Name="TextBoxPriceMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxPriceMin_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxPriceMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxPriceMax_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxAreaMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxAreaMin_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxAreaMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxAreaMax_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxFloorMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,315,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorMin_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxFloorMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,365,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorMax_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxFloorsMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorsMin_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxFloorsMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorsMax_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxRoomsMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,501,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxRoomsMin_PreviewTextInput"/>
-            <TextBox x:Name="TextBoxRoomsMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,542,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"  PreviewTextInput="TextBoxRoomsMax_PreviewTextInput"/>
-            <Label Content="Комнат Min" HorizontalAlignment="Left" Margin="418,508,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
-            <Label Content="Комнат Max" HorizontalAlignment="Left" Margin="418,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
+            <TextBox x:Name="TextBoxPriceMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,508,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxPriceMin_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxPriceMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,551,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxPriceMax_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxAreaMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,592,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxAreaMin_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxAreaMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,633,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxAreaMax_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxFloorMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorMin_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxFloorMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorMax_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxFloorsMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorsMin_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxFloorsMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxFloorsMax_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxRoomsMin" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14" PreviewTextInput="TextBoxRoomsMin_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxRoomsMax" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="564,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"  PreviewTextInput="TextBoxRoomsMax_PreviewTextInput"/>
+            <Label Content="Комнат Min" HorizontalAlignment="Left" Margin="419,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
+            <Label Content="Комнат Max" HorizontalAlignment="Left" Margin="418,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="141" FontSize="14"/>
             <Label Content="Адрес" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.529,0.188" Width="123" FontSize="14"/>
             
             <Rectangle Fill="#00F4F4F5" HorizontalAlignment="Left" Height="112" Margin="10,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="370"/>
@@ -95,12 +95,12 @@
             <TextBox x:Name="TextBoxHouse" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,448,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14" PreviewTextInput="TextBoxHouse_PreviewTextInput"/>
             <TextBox x:Name="TextBoxStreet" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="158,398,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14"/>
             <TextBox x:Name="TextBoxId" x:FieldModifier="public" HorizontalAlignment="Left" Height="36" Margin="171,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209" FontSize="14"/>
-            <Button x:Name="ButtonNewApartments" Content="NewApart-s" HorizontalAlignment="Left" Margin="418,640,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
-            <Button x:Name="ButtonSApartments" Content="sApart-s" HorizontalAlignment="Left" Margin="418,669,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSApartments_Click"/>
-            <Button x:Name="ButtonNewHouses" Content="NewHouses" HorizontalAlignment="Left" Margin="522,640,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
-            <Button x:Name="ButtonSHouses" Content="sHouses" HorizontalAlignment="Left" Margin="522,669,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSHouses_Click"  />
-            <Button x:Name="ButtonNewLands" Content="NewLands" HorizontalAlignment="Left" Margin="621,640,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
-            <Button x:Name="ButtonSLands" Content="sLands" HorizontalAlignment="Left" Margin="621,669,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSLands_Click"  />
+            <Button x:Name="ButtonNewApartments" Content="Сохранение новой квартиры" HorizontalAlignment="Left" Margin="423,381,0,0" VerticalAlignment="Top" Width="201" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+            <Button x:Name="ButtonSApartments" Content="Сохранение квартиры" HorizontalAlignment="Left" Margin="629,384,0,0" VerticalAlignment="Top" Width="168" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSApartments_Click"/>
+            <Button x:Name="ButtonNewHouses" Content="Сохранение нового дома" HorizontalAlignment="Left" Margin="423,410,0,0" VerticalAlignment="Top" Width="201" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
+            <Button x:Name="ButtonSHouses" Content="Сохранение дома" HorizontalAlignment="Left" Margin="629,413,0,0" VerticalAlignment="Top" Width="168" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSHouses_Click"  />
+            <Button x:Name="ButtonNewLands" Content="Сохранение новой земли" HorizontalAlignment="Left" Margin="423,439,0,0" VerticalAlignment="Top" Width="201" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
+            <Button x:Name="ButtonSLands" Content="Сохранение земли" HorizontalAlignment="Left" Margin="629,442,0,0" VerticalAlignment="Top" Width="168" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonSLands_Click"  />
         </Grid>
 
     </Grid>

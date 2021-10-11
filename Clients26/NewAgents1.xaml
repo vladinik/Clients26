@@ -20,10 +20,10 @@
             <Label Content="Имя" HorizontalAlignment="Left" Margin="42,258,0,0" VerticalAlignment="Top" FontSize="14" Height="46"/>
             <Label Content="Доля от комиссии" HorizontalAlignment="Left" Margin="358,128,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
             <Label Content="Отчество" HorizontalAlignment="Left" Margin="40,321,0,0" VerticalAlignment="Top" FontSize="14" Height="48"/>
-            <Button x:Name="ButtonSave" Content="SaveNA" HorizontalAlignment="Left" Margin="645,328,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="ButtonSave_Click" Height="24"/>
-            <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="645,365,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="ButtonExit_Click" Height="24"  />
-            <Button x:Name="ButtonSaveS" Content="SaveStA" HorizontalAlignment="Left" Margin="645,289,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="ButtonSaveS_Click" Height="24"  />
-            
+            <Button x:Name="ButtonSave" Content="Сохранение нового агента" HorizontalAlignment="Left" Margin="542,328,0,0" VerticalAlignment="Top" Width="185" FontSize="14" Click="ButtonSave_Click" Height="24"/>
+            <Button x:Name="ButtonExit" Content="Назад" HorizontalAlignment="Left" Margin="645,365,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="ButtonExit_Click" Height="24"  />
+            <Button x:Name="ButtonSaveS" Content="Сохранение старого агента" HorizontalAlignment="Left" Margin="542,289,0,0" VerticalAlignment="Top" Width="185" FontSize="14" Click="ButtonSaveS_Click" Height="24"  />
+
         </Grid>
 
     </Grid>

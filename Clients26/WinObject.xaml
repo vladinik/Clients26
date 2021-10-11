@@ -28,14 +28,14 @@
             <ComboBoxItem Content="дом"/>
             <ComboBoxItem Content="земельный участок"/>
         </ComboBox>
-        <Button x:Name="ButtonNewApartments" Content="NewApart-s" HorizontalAlignment="Left" Margin="52,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
-        <Button x:Name="ButtonDelete" Content="Delete" HorizontalAlignment="Left" Margin="749,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" RenderTransformOrigin="0.672,-1.902" Height="24" Click="ButtonDelete_Click"/>
-        <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="749,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
-        <Button x:Name="ButtonNewHouses" Content="NewHouses" HorizontalAlignment="Left" Margin="171,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
-        <Button x:Name="ButtonNewLands" Content="NewLands" HorizontalAlignment="Left" Margin="292,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
-        <Button x:Name="ButtonApartments" Content="Apart-s" HorizontalAlignment="Left" Margin="52,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonApartments_Click" />
-        <Button x:Name="ButtonHouses" Content="Houses" HorizontalAlignment="Left" Margin="171,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonHouses_Click" />
-        <Button x:Name="ButtonLands" Content="Lands" HorizontalAlignment="Left" Margin="292,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonLands_Click" />
+        <Button x:Name="ButtonNewApartments" Content="Сохранение новой квартиры" HorizontalAlignment="Left" Margin="15,601,0,0" VerticalAlignment="Top" Width="196" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewApartments_Click"/>
+        <Button x:Name="ButtonDelete" Content="Удалить" HorizontalAlignment="Left" Margin="749,646,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD" RenderTransformOrigin="0.672,-1.902" Height="24" Click="ButtonDelete_Click"/>
+        <Button x:Name="ButtonExit" Content="Назад" HorizontalAlignment="Left" Margin="749,675,0,0" VerticalAlignment="Top" Width="80" FontSize="14" Background="#FFDDDDDD"  Height="24" Click="ButtonExit_Click"/>
+        <Button x:Name="ButtonNewHouses" Content="Сохранение нового дома" HorizontalAlignment="Left" Margin="216,601,0,0" VerticalAlignment="Top" Width="172" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewHouses_Click"/>
+        <Button x:Name="ButtonNewLands" Content="Сохранение новой квартиры" HorizontalAlignment="Left" Margin="393,601,0,0" VerticalAlignment="Top" Width="192" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonNewLands_Click"/>
+        <Button x:Name="ButtonApartments" Content="Сохранение квартиры" HorizontalAlignment="Left" Margin="15,630,0,0" VerticalAlignment="Top" Width="196" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonApartments_Click" />
+        <Button x:Name="ButtonHouses" Content="Сохранение дома" HorizontalAlignment="Left" Margin="216,630,0,0" VerticalAlignment="Top" Width="172" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonHouses_Click" />
+        <Button x:Name="ButtonLands" Content="Сохранение квартиры" HorizontalAlignment="Left" Margin="393,630,0,0" VerticalAlignment="Top" Width="192" FontSize="14" Background="#FFDDDDDD" Height="24" Click="ButtonLands_Click" />
         <Image x:Name="ImageEsoft"  Margin="15,0,618.2,639" Source="logo.png" Stretch="Fill"/>
     </Grid>
 </Window>

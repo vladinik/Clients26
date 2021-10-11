@@ -21,8 +21,8 @@
         <Label Content="Email" HorizontalAlignment="Left" Margin="355,156,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="42,269,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="TextBoxEmail" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="488,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="14"/>
-        <Button x:Name="ButtonSave" Content="SaveN" HorizontalAlignment="Left" Margin="645,328,0,0" VerticalAlignment="Top" Width="48" FontSize="14" Click="ButtonSave_Click"/>
-        <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="645,365,0,0" VerticalAlignment="Top" Width="48" FontSize="14" Click="ButtonExit_Click" />
-        <Button x:Name="ButtonSaveS" Content="SaveSt" HorizontalAlignment="Left" Margin="645,292,0,0" VerticalAlignment="Top" Width="48" FontSize="14" Click="ButtonSaveS_Click" />
+        <Button x:Name="ButtonSave" Content="Сохранение нового клиента" HorizontalAlignment="Left" Margin="510,328,0,0" VerticalAlignment="Top" Width="192" FontSize="14" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonExit" Content="Назад" HorizontalAlignment="Left" Margin="645,365,0,0" VerticalAlignment="Top" Width="48" FontSize="14" Click="ButtonExit_Click" />
+        <Button x:Name="ButtonSaveS" Content="Сохранение старого клиента" HorizontalAlignment="Left" Margin="510,292,0,0" VerticalAlignment="Top" Width="192" FontSize="14" Click="ButtonSaveS_Click" />
     </Grid>
 </Window>
